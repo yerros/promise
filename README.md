@@ -49,3 +49,34 @@ Hasil:
 ```
 
 Perintah diatas dijalankan bersamaan namun hasil untuk console.log(2) dicetak pada akhir, karena proses setTimeout belum selesai, tanpa menunggu proses setTimeout tersebut maka perintah selanjutnya dijalankan.
+<br>
+<br>
+
+# Promise 
+Promise adalah sebuah mekanisme dari standar ECMAScript 2015 yang memungkinkan kita melakukan eksekusi kode fungsi Javascript **asynchronous** dan mendapatkan nilai balik *(return value)* dari eksekusi kode tersebut tidak secara langsung, melainkan berupa objek **"Promise"** yang menjanjikan eksekusi di masa yang akan datang!
+
+Contohnya:
+```javascript
+const fs = require('fs')
+
+
+const readDir = (path = '/') => {
+    return new Promise((resolve, reject) => {
+        fs.readdir(path, (err, result) => {
+            if (err) {
+              throw new Error(err.message)
+            }
+            resolve(result)
+          })
+    })
+}
+
+readDir()
+.then(res => {
+    console.log(res)
+
+})
+```
+
+
+
