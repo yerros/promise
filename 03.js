@@ -8,3 +8,16 @@ for (let i = 1; i <= 3; i++) {
   }
   
   console.log('Done')
+
+  function urut(){
+      return new Promise((resolve, reject) => {
+        for (let i = 1; i <= 3; i++) {
+            setTimeout(() => {
+                resolve()
+            }, 1000);
+          }
+          
+          //console.log('Done')
+      })
+  }
+  urut().then(res => console.log('Done'))
